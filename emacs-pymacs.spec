@@ -2,7 +2,7 @@ Summary:	Python extension for Emacs
 Summary(pl):	Rozszerzenie Python dla Emacsa
 Name:		emacs-pymacs
 Version:	0.15
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Applications/Editors/Emacs
 Source0:	http://www.iro.umontreal.ca/~pinard/pymacs/pymacs-%{version}.tar.gz
