@@ -13,6 +13,7 @@ Patch0:		%{name}-userinstall.patch
 URL:		http://www.iro.umontreal.ca/~pinard/pymacs/
 %requires_eq    python
 Requires:	emacs >= 21.1
+BuildRequires:	emacs
 BuildRequires:	python-devel >= 2.1
 BuildRequires:	rpm-pythonprov
 Obsoletes:	pymacs
