@@ -7,6 +7,7 @@ Release:	2
 License:	GPL v2
 Group:		Applications/Editors/Emacs
 Source0:	http://www.iro.umontreal.ca/~pinard/pymacs/pymacs-%{version}.tar.gz
+# Source0-md5:	0c4b2598480d7f89fc35eec487276626
 Patch0:		%{name}-userinstall.patch
 URL:		http://www.iro.umontreal.ca/~pinard/pymacs/
 BuildRequires:	emacs
