@@ -1,0 +1,42 @@
+diff -urN pymacs-0.15.org/setup pymacs-0.15/setup
+--- pymacs-0.15.org/setup	Tue Jan 22 21:59:54 2002
++++ pymacs-0.15/setup	Tue Jan 22 22:14:50 2002
+@@ -43,7 +43,7 @@
+ 
+ def main(*arguments):
+     import getopt
+-    options, arguments = getopt.getopt(arguments, 'E:HP:Vb:eg:il:np:x:')
++    options, arguments = getopt.getopt(arguments, 'E:HP:Vb:eg:il:np:ux:')
+     for option, value in options:
+         if option == '-E' and value:
+             run.emacs = value
+@@ -69,6 +69,8 @@
+             run.pythondir = [value]
+         elif option == '-x' and value:
+             run.pymacsdir = [value]
++	elif option == '-u':
++	    run.dry = 1
+     study_possible()
+     if run.interactive:
+         check_with_user()
+@@ -209,17 +211,17 @@
+ def check_choices():
+     write = sys.stderr.write
+     error = 0
+-    if run.bindir and os.access(os.path.expanduser(run.bindir[0]), 7):
++    if run.bindir:
+         run.bindir = os.path.expanduser(run.bindir[0])
+     else:
+         write("Use `-b BINDIR' to select where `pymacs-services' should go.\n")
+         error = 1
+-    if run.lispdir and os.access(os.path.expanduser(run.lispdir[0]), 7):
++    if run.lispdir:
+         run.lispdir = run.lispdir[0]
+     else:
+         write("Use `-l LISPDIR' to select where `pymacs.el' should go.\n")
+         error = 1
+-    if run.pythondir and os.access(os.path.expanduser(run.pythondir[0]), 7):
++    if run.pythondir:
+         run.pythondir = os.path.expanduser(run.pythondir[0])
+     else:
+         write("Use `-p PYTHONDIR' to select where `pymacs.py' should go.\n")
