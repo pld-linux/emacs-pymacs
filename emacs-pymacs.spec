@@ -3,21 +3,24 @@ Summary:	Python extension for Emacs
 Summary(pl):	Rozszerzenie Python dla Emacsa
 Name:		emacs-pymacs
 Version:	0.15
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Editors/Emacs
 Group(de):	Applikationen/Editors/Emacs
+Group(es):	Aplicaciones/Editores/Emacs
+Group(fr):	Applications/Editeurs/Emacs
 Group(pl):	Aplikacje/Edytory/Emacs
+Group(pt):	Aplicações/Editores/Emacs
 Source0:	http://www.iro.umontreal.ca/~pinard/pymacs/pymacs-%{version}.tar.gz
 Patch0:		%{name}-userinstall.patch
 URL:		http://www.iro.umontreal.ca/~pinard/pymacs/
+BuildRequires:	emacs
+BuildRequires:	python-devel >= 2.2
+BuildRequires:	rpm-pythonprov
 %requires_eq    python
 Requires:	emacs >= 21.1
-BuildRequires:	emacs
-BuildRequires:	python-devel >= 2.1
-BuildRequires:	rpm-pythonprov
-Obsoletes:	pymacs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	pymacs
 
 %description
 Pymacs is a powerful tool which, once started from Emacs, allows
