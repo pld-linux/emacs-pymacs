@@ -6,11 +6,6 @@ Version:	0.15
 Release:	2
 License:	GPL v2
 Group:		Applications/Editors/Emacs
-Group(de):	Applikationen/Editors/Emacs
-Group(es):	Aplicaciones/Editores/Emacs
-Group(fr):	Applications/Editeurs/Emacs
-Group(pl):	Aplikacje/Edytory/Emacs
-Group(pt):	Aplicações/Editores/Emacs
 Source0:	http://www.iro.umontreal.ca/~pinard/pymacs/pymacs-%{version}.tar.gz
 Patch0:		%{name}-userinstall.patch
 URL:		http://www.iro.umontreal.ca/~pinard/pymacs/
