@@ -1,4 +1,3 @@
-%include /usr/lib/rpm/macros.python
 Summary:	Python extension for Emacs
 Summary(pl):	Rozszerzenie Python dla Emacsa
 Name:		emacs-pymacs
