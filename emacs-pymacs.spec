@@ -12,7 +12,7 @@ URL:		http://www.iro.umontreal.ca/~pinard/pymacs/
 BuildRequires:	emacs
 BuildRequires:	python-devel >= 2.2
 BuildRequires:	rpm-pythonprov
-%requires_eq    python
+%pyrequires_eq    python
 Requires:	emacs >= 21.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	pymacs
