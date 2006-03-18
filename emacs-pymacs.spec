@@ -1,20 +1,20 @@
 Summary:	Python extension for Emacs
 Summary(pl):	Rozszerzenie Python dla Emacsa
 Name:		emacs-pymacs
-Version:	0.15
-Release:	4
+Version:	0.22
+Release:	1	
 License:	GPL v2
 Group:		Applications/Editors/Emacs
-Source0:	http://www.iro.umontreal.ca/~pinard/pymacs/pymacs-%{version}.tar.gz
-# Source0-md5:	0c4b2598480d7f89fc35eec487276626
-Patch0:		%{name}-userinstall.patch
-URL:		http://www.iro.umontreal.ca/~pinard/pymacs/
+Source0:	http://pymacs.progiciels-bpi.ca/archives/Pymacs-%{version}.tar.gz
+# Source0-md5:	73b7a641be100fd90a9be59ecf01fd98
+URL:		http://pymacs.progiciels-bpi.ca/
 BuildRequires:	emacs
 BuildRequires:	python-devel >= 2.2
 %pyrequires_eq    python
 Requires:	emacs >= 21.1
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	pymacs
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Pymacs is a powerful tool which, once started from Emacs, allows
@@ -31,34 +31,30 @@ Emacs LISP. Z kolei funkcje pythona mog± u¿ywaæ us³ug Emacsa oraz
 obs³ugiwaæ obiekty LISPa znajduj±ce siê w przestrzeni LISPa.
 
 %prep
-%setup -q -n pymacs-%{version}
-%patch0 -p1
+%setup -q -n Pymacs-%{version}
 
 %build
-./setup -u \
-	-b %{_bindir} \
-	-l %{_datadir}/emacs/site-lisp \
-	-p %{py_sitedir}
+emacs -batch -f batch-byte-compile pymacs.el
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/emacs/site-lisp,%{py_sitedir}}
+install -d $RPM_BUILD_ROOT%{_emacs_lispdir}
+install pymacs.elc $RPM_BUILD_ROOT%{_emacs_lispdir}
 
-./setup \
-	-b $RPM_BUILD_ROOT%{_bindir} \
-	-l $RPM_BUILD_ROOT%{_datadir}/emacs/site-lisp \
-	-p $RPM_BUILD_ROOT%{py_sitedir} \
-	install
+%{__python} setup.py install --root=$RPM_BUILD_ROOT
 
-%py_comp $RPM_BUILD_ROOT%{py_sitedir}
-%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
+%py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog* README THANKS* TODO
+%doc ChangeLog* README THANKS* TODO doc/pymacs.pdf
 %attr(755,root,root) %{_bindir}/*
-%{py_sitedir}/*.py?
-%{_datadir}/emacs/site-lisp/*.elc
+%{py_sitescriptdir}/Pymacs/*.py[co]
+%{py_sitescriptdir}/Pymacs/Nn/*.py[co]
+%{py_sitescriptdir}/Pymacs/Rebox/*.py[co]
+%{_emacs_lispdir}/*.elc
