@@ -54,7 +54,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog* README THANKS* TODO doc/pymacs.pdf
 %attr(755,root,root) %{_bindir}/*
+%dir %{py_sitescriptdir}/Pymacs
 %{py_sitescriptdir}/Pymacs/*.py[co]
+%dir %{py_sitescriptdir}/Pymacs/Nn
 %{py_sitescriptdir}/Pymacs/Nn/*.py[co]
+%dir %{py_sitescriptdir}/Pymacs/Rebox
 %{py_sitescriptdir}/Pymacs/Rebox/*.py[co]
 %{_emacs_lispdir}/*.elc
