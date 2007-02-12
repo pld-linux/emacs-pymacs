@@ -1,5 +1,5 @@
 Summary:	Python extension for Emacs
-Summary(pl.UTF-8):   Rozszerzenie Python dla Emacsa
+Summary(pl.UTF-8):	Rozszerzenie Python dla Emacsa
 Name:		emacs-pymacs
 Version:	0.22
 Release:	1	
