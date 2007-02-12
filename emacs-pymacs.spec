@@ -1,5 +1,5 @@
 Summary:	Python extension for Emacs
-Summary(pl):	Rozszerzenie Python dla Emacsa
+Summary(pl.UTF-8):   Rozszerzenie Python dla Emacsa
 Name:		emacs-pymacs
 Version:	0.22
 Release:	1	
@@ -23,12 +23,12 @@ Python as an extension language for Emacs. Within Emacs LISP code, one
 may load and use Python modules. Python functions may themselves use
 Emacs services, and handle LISP objects kept in LISP space.
 
-%description -l pl
-Pymacs jest potê¿nym narzêdziem, które po uruchomieniu z Emacsa
-pozwala na dwukierunkow± komunikacjê pomiêdzy Emacs LISP oraz
-Pythonem. Pymacs pozwala na ³adowanie i u¿ywanie modu³ów Pythona z
-Emacs LISP. Z kolei funkcje pythona mog± u¿ywaæ us³ug Emacsa oraz
-obs³ugiwaæ obiekty LISPa znajduj±ce siê w przestrzeni LISPa.
+%description -l pl.UTF-8
+Pymacs jest potÄ™Å¼nym narzÄ™dziem, ktÃ³re po uruchomieniu z Emacsa
+pozwala na dwukierunkowÄ… komunikacjÄ™ pomiÄ™dzy Emacs LISP oraz
+Pythonem. Pymacs pozwala na Å‚adowanie i uÅ¼ywanie moduÅ‚Ã³w Pythona z
+Emacs LISP. Z kolei funkcje pythona mogÄ… uÅ¼ywaÄ‡ usÅ‚ug Emacsa oraz
+obsÅ‚ugiwaÄ‡ obiekty LISPa znajdujÄ…ce siÄ™ w przestrzeni LISPa.
 
 %prep
 %setup -q -n Pymacs-%{version}
