@@ -41,7 +41,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_emacs_lispdir}
 install pymacs.elc $RPM_BUILD_ROOT%{_emacs_lispdir}
 
-%{__python} setup.py install --root=$RPM_BUILD_ROOT
+%py_install
 
 %py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
