@@ -8,6 +8,7 @@ Group:		Applications/Editors/Emacs
 Source0:	http://pymacs.progiciels-bpi.ca/archives/Pymacs-%{version}.tar.gz
 # Source0-md5:	73b7a641be100fd90a9be59ecf01fd98
 URL:		http://pymacs.progiciels-bpi.ca/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	emacs
 BuildRequires:	python-devel >= 2.2
 %pyrequires_eq    python
